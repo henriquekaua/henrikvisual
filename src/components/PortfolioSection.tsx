@@ -22,7 +22,6 @@ import hokori1 from "@/assets/hokori/hokori1.jpg";
 import buff1 from "@/assets/buff/buff1.jpg";
 import pgEuropeu from "@/assets/pg-imports/europeu.jpg";
 import thumbYasuo from "@/assets/thumbnails/thumb-yasuo.jpg";
-
 type Category = "video" | "motion" | "design" | "web";
 
 const categoryKeys: Category[] = ["motion", "video", "design", "web"];
@@ -564,19 +563,7 @@ const PortfolioSection = () => {
               </button>
               <div className="rounded-2xl overflow-hidden shadow-card">
                 {selectedItem.videoUrl ? (
-                  /\.(mp4|webm)$/i.test(selectedItem.videoUrl) ? (
-                    <video src={selectedItem.videoUrl} autoPlay controls controlsList="nodownload noremoteplayback noplaybackrate" disablePictureInPicture onContextMenu={(e) => e.preventDefault()} loop playsInline className="w-full aspect-[9/16] object-contain bg-black" />
-                  ) : (
-                    <iframe
-                      src={selectedItem.videoUrl
-                        .replace("youtube.com/shorts/", "youtube.com/embed/")
-                        .replace("youtu.be/", "youtube.com/embed/") + "?autoplay=1"}
-                      title={t(`pi.${selectedItem.id}.title`, selectedItem.title)}
-                      className="w-full aspect-video"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                    />
-                  )
+                  <video src={selectedItem.videoUrl} autoPlay controls controlsList="nodownload noremoteplayback noplaybackrate" disablePictureInPicture onContextMenu={(e) => e.preventDefault()} loop playsInline className="w-full aspect-[9/16] object-contain bg-black" />
                 ) : (
                   <img src={selectedItem.thumbnail} alt={t(`pi.${selectedItem.id}.title`, selectedItem.title)} loading="lazy" className="w-full aspect-video object-cover" />
                 )}

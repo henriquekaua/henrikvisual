@@ -10,7 +10,6 @@ import hokoriSushi from "@/assets/brands/hokori-sushi.png";
 import ace from "@/assets/brands/ace.png";
 import buffSmurfs from "@/assets/brands/buff-smurfs.png";
 import remessaOnline from "@/assets/brands/remessa-online.png";
-
 const logos = [
   { id: 1, name: "SupriJá", src: suprija },
   { id: 2, name: "Zafenate", src: zafenate },

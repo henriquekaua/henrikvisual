@@ -8,7 +8,6 @@ import BrandsSection from "@/components/BrandsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import heroBg from "@/assets/hero-banner-2.jpg";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [

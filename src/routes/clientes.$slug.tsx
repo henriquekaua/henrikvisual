@@ -27,7 +27,6 @@ import thumbYasuo from "@/assets/thumbnails/thumb-yasuo.jpg";
 import thumbSrnick from "@/assets/thumbnails/srnick-egirl.jpg";
 import thumb5x5 from "@/assets/thumbnails/thumb-5x5.jpg";
 import thumbYasuoLovers from "@/assets/thumbnails/yasuo-lovers.jpg";
-
 type Client = {
   name: string;
   tagline: string;
@@ -185,21 +184,21 @@ function ClientPage() {
           <div className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,0.42fr)] lg:grid-rows-[auto_auto] lg:items-stretch">
             {[pgBanner1, pgBanner2].map((img, index) => (
               <button
-                key={img.url}
-                onClick={() => setLightbox(img.url)}
+                key={img}
+                onClick={() => setLightbox(img)}
                 className={`group relative block w-full overflow-hidden rounded-2xl border border-border/40 bg-muted/20 shadow-card transition-transform duration-500 hover:-translate-y-1 ${index === 0 ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-1 lg:row-start-2"}`}
               >
-                <img src={img.url} alt="" loading="lazy" className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]" />
+                <img src={img} alt="" loading="lazy" className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.03]" />
               </button>
             ))}
             <div className="grid grid-cols-1 gap-4 md:gap-6 sm:grid-cols-3 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:min-h-0 lg:grid-cols-1 lg:grid-rows-3 lg:overflow-hidden lg:[contain:size]">
               {[pgEuropeu, pgRetro, pgBrasileiros].map((img) => (
                 <button
-                  key={img.url}
-                  onClick={() => setLightbox(img.url)}
+                  key={img}
+                  onClick={() => setLightbox(img)}
                   className="group relative block w-full overflow-hidden rounded-2xl border border-border/40 bg-muted/20 shadow-card transition-transform duration-500 hover:-translate-y-1 lg:h-full lg:min-h-0"
                 >
-                  <img src={img.url} alt="" loading="lazy" className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.03] lg:h-full lg:object-cover" />
+                  <img src={img} alt="" loading="lazy" className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.03] lg:h-full lg:object-cover" />
                 </button>
               ))}
             </div>
