@@ -102,7 +102,7 @@ const webProjects: WebProject[] = [
   },
 ];
 
-const carouselRepeatCount = 8;
+const carouselRepeatCount = 3;
 
 const playCarouselVideo = (video: HTMLVideoElement) => {
   video.muted = true;
@@ -415,7 +415,12 @@ const PortfolioSection = () => {
                     backfaceVisibility: "hidden",
                   }}
                 >
-                  {Array.from({ length: carouselRepeatCount }, () => currentItems).flat().map((item, i) => (
+                  {Array.from({ length: carouselRepeatCount }, () => currentItems).flat().map((item, i) => {
+                    const currentIndex = cardWidth > 0 ? Math.round(-offset / cardWidth) : 0;
+                    const windowSize = visibleCount + 2;
+                    const isNearWindow = i >= currentIndex - 1 && i <= currentIndex + windowSize;
+                    const shouldLoadSrc = videosInView && isNearWindow;
+                    return (
                     <div
                       key={`${item.id}-${i}`}
                       className="shrink-0 px-3"
@@ -428,12 +433,12 @@ const PortfolioSection = () => {
                         <div className={`relative rounded-xl overflow-hidden shadow-card bg-black ${isLandscape ? "aspect-video" : "aspect-[9/16]"}`}>
                           {item.videoUrl && /\.(mp4|webm)$/i.test(item.videoUrl) ? (
                             <video
-                              src={videosInView ? item.videoUrl : undefined}
+                              src={shouldLoadSrc ? item.videoUrl : undefined}
                               data-carousel-video="true"
                               muted
                               loop
                               playsInline
-                              preload={videosInView && i < visibleCount ? "auto" : "metadata"}
+                              preload={shouldLoadSrc && i < currentIndex + visibleCount ? "auto" : "none"}
                               className="w-full h-full object-cover"
                             />
                           ) : (
@@ -470,7 +475,8 @@ const PortfolioSection = () => {
                         </div>
                       </div>
                     </div>
-                  ))}
+                  );
+                  })}
                 </div>
               </div>
             </div>

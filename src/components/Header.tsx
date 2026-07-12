@@ -21,8 +21,39 @@ const Header = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
+    // On initial load, if a hash is present, scroll to it then strip it from the URL
+    if (window.location.hash && window.location.hash.length > 1) {
+      const el = document.getElementById(window.location.hash.slice(1));
+      if (el) {
+        requestAnimationFrame(() => el.scrollIntoView({ block: "start" }));
+      }
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Global handler: intercept any in-page hash link so the URL stays clean.
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      const target = (e.target as HTMLElement | null)?.closest?.("a");
+      if (!target) return;
+      const href = target.getAttribute("href");
+      if (!href || !href.startsWith("#") || href.length < 2) return;
+      const el = document.getElementById(href.slice(1));
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
+  const handleAnchorClick = (_e: React.MouseEvent<HTMLAnchorElement>, _href: string) => {
+    // handled by the global listener above; kept for existing call sites
+  };
+
 
   return (
     <motion.header
@@ -36,7 +67,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
-        <a href="#hero" className="flex items-center group">
+
+        <a href="#hero" onClick={(e) => handleAnchorClick(e, "#hero")} className="flex items-center group">
           <img
             src={logoAsset}
             alt="Logo"
@@ -50,6 +82,7 @@ const Header = () => {
             <a
               key={item.href}
               href={item.href}
+              onClick={(e) => handleAnchorClick(e, item.href)}
               className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-gradient-primary after:transition-all hover:after:w-full"
             >
               {item.label}
@@ -58,6 +91,7 @@ const Header = () => {
           <LanguageSwitcher />
           <a
             href="#contato"
+            onClick={(e) => handleAnchorClick(e, "#contato")}
             className="bg-gradient-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-semibold shadow-glow hover:shadow-[0_0_30px_-5px_hsl(271_65%_60%/0.7)] hover:-translate-y-0.5 transition-all duration-300"
           >
             {t("nav.quote")}
@@ -91,7 +125,10 @@ const Header = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    handleAnchorClick(e, item.href);
+                  }}
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   {item.label}
@@ -99,7 +136,10 @@ const Header = () => {
               ))}
               <a
                 href="#contato"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  setMobileOpen(false);
+                  handleAnchorClick(e, "#contato");
+                }}
                 className="bg-gradient-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold text-center"
               >
                 {t("nav.quote")}
