@@ -38,7 +38,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-6">
         <a href="#hero" className="flex items-center group">
           <img
-            src={logoAsset.url}
+            src={logoAsset}
             alt="Logo"
             className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
           />

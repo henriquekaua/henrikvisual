@@ -42,12 +42,12 @@ const clients: Record<string, Client> = {
     description:
       "Artes para feed e stories do Instagram com foco em delivery, promoções sazonais e divulgação do cardápio.",
     images: [
-      { url: hokori1.url, alt: "Melhor sushi de Salto", orientation: "square", desktopOrder: 1 },
-      { url: hokori2.url, alt: "Faça seu pedido agora", orientation: "square", desktopOrder: 2 },
-      { url: hokori3.url, alt: "Delivery de sushi", orientation: "square", desktopOrder: 3 },
-      { url: hokori4.url, alt: "Horário de funcionamento Natal", orientation: "portrait", desktopOrder: 4 },
-      { url: hokori5.url, alt: "Promoções de Natal Especial Supreme", orientation: "portrait", desktopOrder: 5 },
-      { url: hokori6.url, alt: "Promoções de Natal Mega Salmão", orientation: "portrait", desktopOrder: 6 },
+      { url: hokori1, alt: "Melhor sushi de Salto", orientation: "square", desktopOrder: 1 },
+      { url: hokori2, alt: "Faça seu pedido agora", orientation: "square", desktopOrder: 2 },
+      { url: hokori3, alt: "Delivery de sushi", orientation: "square", desktopOrder: 3 },
+      { url: hokori4, alt: "Horário de funcionamento Natal", orientation: "portrait", desktopOrder: 4 },
+      { url: hokori5, alt: "Promoções de Natal Especial Supreme", orientation: "portrait", desktopOrder: 5 },
+      { url: hokori6, alt: "Promoções de Natal Mega Salmão", orientation: "portrait", desktopOrder: 6 },
     ],
   },
   "buff-smurfs": {
@@ -56,14 +56,14 @@ const clients: Record<string, Client> = {
     description:
       "Artes para feed e stories do Instagram com foco em tabelas de preços, históricos de partidas, serviços concluídos e destaques da marca.",
     images: [
-      { url: buff1.url, alt: "Tabela de preços DuoBoost", orientation: "portrait", desktopOrder: 1 },
-      { url: buff2.url, alt: "Tabela de preços EloBoost", orientation: "landscape", desktopOrder: 4 },
-      { url: buff3.url, alt: "Confira nossos históricos", orientation: "portrait", desktopOrder: 2 },
-      { url: buff4.url, alt: "Serviços concluídos", orientation: "portrait", desktopOrder: 3 },
-      { url: buff5.url, alt: "Destaque — Coaching", orientation: "square", desktopOrder: 5 },
-      { url: buff6.url, alt: "Destaque — Discord", orientation: "square", desktopOrder: 6 },
-      { url: buff7.url, alt: "Streamer parceiro — Varas LoL", orientation: "square", desktopOrder: 7 },
-      { url: buff8.url, alt: "Painel de patrocínio — Varaslol", orientation: "portrait", desktopOrder: 8 },
+      { url: buff1, alt: "Tabela de preços DuoBoost", orientation: "portrait", desktopOrder: 1 },
+      { url: buff2, alt: "Tabela de preços EloBoost", orientation: "landscape", desktopOrder: 4 },
+      { url: buff3, alt: "Confira nossos históricos", orientation: "portrait", desktopOrder: 2 },
+      { url: buff4, alt: "Serviços concluídos", orientation: "portrait", desktopOrder: 3 },
+      { url: buff5, alt: "Destaque — Coaching", orientation: "square", desktopOrder: 5 },
+      { url: buff6, alt: "Destaque — Discord", orientation: "square", desktopOrder: 6 },
+      { url: buff7, alt: "Streamer parceiro — Varas LoL", orientation: "square", desktopOrder: 7 },
+      { url: buff8, alt: "Painel de patrocínio — Varaslol", orientation: "portrait", desktopOrder: 8 },
     ],
   },
   "pg-imports": {
@@ -72,11 +72,11 @@ const clients: Record<string, Client> = {
     description:
       "Artes para categorias, banners promocionais e institucionais da loja de camisas de futebol PG Imports.",
     images: [
-      { url: pgBanner1.url, alt: "Compre 2, Leve 3 — Banner promocional", orientation: "landscape", desktopOrder: 1 },
-      { url: pgEuropeu.url, alt: "Categoria — Europeus", orientation: "portrait", desktopOrder: 2 },
-      { url: pgRetro.url, alt: "Categoria — Retrô", orientation: "portrait", desktopOrder: 3 },
-      { url: pgBrasileiros.url, alt: "Categoria — Brasileiros", orientation: "portrait", desktopOrder: 4 },
-      { url: pgBanner2.url, alt: "Frete grátis para todo o Brasil", orientation: "landscape", desktopOrder: 5 },
+      { url: pgBanner1, alt: "Compre 2, Leve 3 — Banner promocional", orientation: "landscape", desktopOrder: 1 },
+      { url: pgEuropeu, alt: "Categoria — Europeus", orientation: "portrait", desktopOrder: 2 },
+      { url: pgRetro, alt: "Categoria — Retrô", orientation: "portrait", desktopOrder: 3 },
+      { url: pgBrasileiros, alt: "Categoria — Brasileiros", orientation: "portrait", desktopOrder: 4 },
+      { url: pgBanner2, alt: "Frete grátis para todo o Brasil", orientation: "landscape", desktopOrder: 5 },
     ],
   },
   "thumbnails": {
@@ -85,12 +85,12 @@ const clients: Record<string, Client> = {
     description:
       "Coleção de thumbnails criadas para vídeos de YouTube, com foco em impacto visual, tipografia forte e composições que aumentam a taxa de cliques.",
     images: [
-      { url: thumbLolEdit.url, alt: "LOL Edit", orientation: "landscape" },
-      { url: thumbTipoLua.url, alt: "Tipo Lua", orientation: "landscape" },
-      { url: thumbYasuo.url, alt: "Yasuo", orientation: "landscape" },
-      { url: thumbSrnick.url, alt: "Srnick Egirl", orientation: "landscape" },
-      { url: thumb5x5.url, alt: "5x5", orientation: "landscape" },
-      { url: thumbYasuoLovers.url, alt: "Yasuo Lovers", orientation: "landscape" },
+      { url: thumbLolEdit, alt: "LOL Edit", orientation: "landscape" },
+      { url: thumbTipoLua, alt: "Tipo Lua", orientation: "landscape" },
+      { url: thumbYasuo, alt: "Yasuo", orientation: "landscape" },
+      { url: thumbSrnick, alt: "Srnick Egirl", orientation: "landscape" },
+      { url: thumb5x5, alt: "5x5", orientation: "landscape" },
+      { url: thumbYasuoLovers, alt: "Yasuo Lovers", orientation: "landscape" },
     ],
   },
 };

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Transformando ideias em experiências visuais inesquecíveis." },
     ],
     links: [
-      { rel: "preload", as: "image", href: heroBg.url, fetchpriority: "high" } as unknown as { rel: string; href: string },
+      { rel: "preload", as: "image", href: heroBg, fetchpriority: "high" } as unknown as { rel: string; href: string },
     ],
   }),
   component: Index,

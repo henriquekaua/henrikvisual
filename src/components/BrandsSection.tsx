@@ -12,15 +12,15 @@ import buffSmurfs from "@/assets/brands/buff-smurfs.png";
 import remessaOnline from "@/assets/brands/remessa-online.png";
 
 const logos = [
-  { id: 1, name: "SupriJá", src: suprija.url },
-  { id: 2, name: "Zafenate", src: zafenate.url },
-  { id: 3, name: "Nombrare", src: nombrare.url },
-  { id: 4, name: "Panini", src: panini.url },
-  { id: 5, name: "Strong Body\nSupplements", src: strongbody.url },
-  { id: 9, name: "Remessa Online", src: remessaOnline.url },
-  { id: 6, name: "Hokori Sushi", src: hokoriSushi.url },
-  { id: 7, name: "Ace", src: ace.url },
-  { id: 8, name: "Buff Smurfs", src: buffSmurfs.url },
+  { id: 1, name: "SupriJá", src: suprija },
+  { id: 2, name: "Zafenate", src: zafenate },
+  { id: 3, name: "Nombrare", src: nombrare },
+  { id: 4, name: "Panini", src: panini },
+  { id: 5, name: "Strong Body\nSupplements", src: strongbody },
+  { id: 9, name: "Remessa Online", src: remessaOnline },
+  { id: 6, name: "Hokori Sushi", src: hokoriSushi },
+  { id: 7, name: "Ace", src: ace },
+  { id: 8, name: "Buff Smurfs", src: buffSmurfs },
 ];
 
 const LogoCard = ({ logo }: { logo: (typeof logos)[number] }) => (

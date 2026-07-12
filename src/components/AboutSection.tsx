@@ -39,7 +39,7 @@ const AboutSection = () => {
 
               <div className="relative w-full h-full rounded-full overflow-hidden border border-border/50">
                 <img
-                  src={profileAsset.url}
+                  src={profileAsset}
                   alt="Profile"
                   loading="lazy"
                   decoding="async"
